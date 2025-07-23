@@ -1,0 +1,92 @@
+
+/* Custom animations for background effects */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.6;
+  }
+}
+
+@keyframes float-scale {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0.9);
+    opacity: 0.05;
+  }
+  15% {
+    transform: translateY(-25px) translateX(20px) scale(1.0);
+    opacity: 0.08;
+  }
+  30% {
+    transform: translateY(-40px) translateX(-15px) scale(1.1);
+    opacity: 0.12;
+  }
+  45% {
+    transform: translateY(-55px) translateX(30px) scale(1.2);
+    opacity: 0.1;
+  }
+  60% {
+    transform: translateY(-35px) translateX(-25px) scale(1.0);
+    opacity: 0.08;
+  }
+  75% {
+    transform: translateY(-20px) translateX(10px) scale(1.1);
+    opacity: 0.06;
+  }
+  90% {
+    transform: translateY(-10px) translateX(-5px) scale(0.95);
+    opacity: 0.04;
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) scale(0.9);
+    opacity: 0.05;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-scale {
+  animation: float-scale 12s ease-in-out infinite;
+}
+
+.animate-slide-right {
+  animation: slide-right 8s linear infinite;
+}
+
+.animate-slide-left {
+  animation: slide-left 6s linear infinite;
+  animation-delay: 2s;
+}

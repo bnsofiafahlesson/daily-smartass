@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Background from "@/components/Background";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +14,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="h-full antialiased bg-[#000203] text-white">
+        <main className="flex min-h-screen flex-1 flex-col md:min-h-unset bg-[#000203]">
+          <div className="mx-auto flex w-full flex-1 flex-col items-center relative">
+            <Background />
+            <div className="z-10 w-full max-w-3xl">
+              <h1 className="mx-4 my-6 md:ml-0">Hallå!</h1>
+              {children}
+            </div>
+          </div>
+        </main>
+      </body>
     </html>
   );
 }
