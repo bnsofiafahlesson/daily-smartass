@@ -44,6 +44,27 @@ export default function Background() {
         {[...Array(16)].map((_, i) => {
           const size = 8 + (i % 8) * 8; // Varies between 8px and 64px (4px to 32px radius)
           const opacity = (1 - size / 80) * 0.7 + 0.2; // Smaller = more opaque, larger = less opaque
+
+          // Pre-defined random positions to avoid diagonal patterns
+          const positions = [
+            { left: 15, top: 25 },
+            { left: 75, top: 15 },
+            { left: 45, top: 65 },
+            { left: 85, top: 45 },
+            { left: 25, top: 80 },
+            { left: 65, top: 35 },
+            { left: 10, top: 55 },
+            { left: 90, top: 70 },
+            { left: 55, top: 10 },
+            { left: 35, top: 90 },
+            { left: 80, top: 25 },
+            { left: 20, top: 40 },
+            { left: 70, top: 85 },
+            { left: 40, top: 20 },
+            { left: 60, top: 75 },
+            { left: 30, top: 50 },
+          ];
+
           return (
             <div
               key={i}
@@ -51,8 +72,8 @@ export default function Background() {
               style={{
                 width: `${size}px`,
                 height: `${size}px`,
-                left: `${5 + (i % 10) * 9 + (i > 7 ? 5 : 0)}%`,
-                top: `${10 + (i % 5) * 18 + (i > 7 ? 10 : 0)}%`,
+                left: `${positions[i].left}%`,
+                top: `${positions[i].top}%`,
                 animationDelay: `${i * 1.2}s`,
                 animationDuration: `${12 + (i % 3) * 3}s`,
                 opacity: opacity,
