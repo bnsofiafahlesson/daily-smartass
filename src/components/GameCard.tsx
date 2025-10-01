@@ -13,6 +13,8 @@ export default function GameCard({
   link: string;
   imageUrl: string;
 }) {
+  // TO DO: Update so that it links to an internal page with more details about the game and instead use a icon for external link
+
   return (
     <>
       <Link href={link} rel="noopener noreferrer">
